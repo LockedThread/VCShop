@@ -1,0 +1,22 @@
+title: '&dMisc.'
+size: 9
+background-item:
+  name: ''
+  material: 'STAINED_GLASS_PANE'
+  data: 'BLACK'
+  enchanted: true
+items:
+  0:
+    name: '&c&l[!] &cBack &c&l[!]'
+    material: 'COAL_BLOCK'
+    lore:
+    - '&7Click to view the root TokenShop GUI.'
+    commands:
+    - '#opengui tokenshop'
+  1:
+    name: '&eAdd your shit in here!'
+    material: 'DIRT'
+    lore:
+    - '&7Add more shit in here!'
+    commands:
+    - ''

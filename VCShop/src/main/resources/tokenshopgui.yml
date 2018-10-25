@@ -1,0 +1,22 @@
+title: '&cToken Shop'
+size: 9
+background-item:
+  name: ''
+  material: 'STAINED_GLASS_PANE'
+  data: 'BLACK'
+  enchanted: true
+items:
+  0:
+    name: '&e&l[!] &aEnchants &e&l[!]'
+    material: 'BOOK'
+    lore:
+    - '&7Click to view the enchants.'
+    commands:
+    - '#opengui enchants'
+  8:
+    name: '&e&l[!] &6Miscellaneous &e&l[!]'
+    material: 'BOOK'
+    lore:
+    - '&7Click to view the misc perks.'
+    commands:
+    - '#opengui misc'

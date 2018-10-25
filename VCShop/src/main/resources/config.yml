@@ -1,0 +1,203 @@
+gui-enchant-item:
+  material: BOOK
+  name: '&e{enchant} &f- &e{lvl} - &a{price} Tokens'
+  lore:
+  - '&eLeft click the item to apply the &cenchant &eto the item in your &fhand&e.'
+gui-max-level-enchant-item:
+  material: BOOK
+  name: '&e{enchant} - &cMAX LEVEL'
+  lore:
+  - '&eThis enchant is max leveled.'
+token-item:
+  material: BOWL
+  name: '&eToken'
+  lore:
+  - '&eEach one of these items are worth 1 token in the tokenshop.'
+enchant-colors:
+  level-1: 'DARK_GRAY'
+  level-2: 'GRAY'
+  level-3: 'DARK_GREEN'
+  level-4: 'GREEN'
+  level-5: 'DARK_RED'
+  level-6: 'RED'
+  level-7: 'AQUA'
+  level-8: 'LIGHT_PURPLE'
+  level-9: 'YELLOW'
+  level-10: 'GOLD'
+enchants:
+  bow:
+    lightning:
+      chances:
+        level-1: 5
+        level-2: 7
+        level-3: 10
+        level-4: 12
+      tokens-prices:
+        level-1: 5
+        level-2: 7
+        level-3: 10
+        level-4: 12
+    blinding:
+      chances:
+        level-1: 3
+        level-2: 5
+        level-3: 7
+        level-4: 9
+        level-5: 11
+        level-6: 13
+      duration:
+        level-1: 1
+        level-2: 2
+        level-3: 3
+        level-4: 4
+        level-5: 5
+        level-6: 6
+      tokens-prices:
+        level-1: 5
+        level-2: 7
+        level-3: 10
+        level-4: 12
+        level-5: 15
+        level-6: 20
+    weakened:
+      chances:
+        level-1: 3
+        level-2: 5
+        level-3: 7
+        level-4: 12
+      duration:
+        level-1: 2
+        level-2: 3
+        level-3: 4
+        level-4: 5
+      tokens-prices:
+        level-1: 5
+        level-2: 7
+        level-3: 10
+        level-4: 12
+    wither:
+      chances:
+        level-1: 3
+        level-2: 5
+        level-3: 7
+        level-4: 12
+      duration:
+        level-1: 2
+        level-2: 3
+        level-3: 4
+        level-4: 5
+      tokens-prices:
+        level-1: 5
+        level-2: 7
+        level-3: 10
+        level-4: 12
+  sword:
+    venom:
+      chances:
+        level-1: 3
+        level-2: 5
+        level-3: 7
+        level-4: 12
+      duration:
+        level-1: 2
+        level-2: 3
+        level-3: 4
+        level-4: 5
+      tokens-prices:
+        level-1: 5
+        level-2: 7
+        level-3: 10
+        level-4: 12
+    lifesteal:
+      chances:
+        level-1: 3
+        level-2: 5
+      tokens-prices:
+        level-1: 5
+        level-2: 7
+    freezing:
+      chances:
+        level-1: 3
+        level-2: 5
+        level-3: 7
+        level-4: 12
+      duration:
+        level-1: 2
+        level-2: 3
+        level-3: 4
+        level-4: 5
+      tokens-prices:
+        level-1: 5
+        level-2: 7
+        level-3: 10
+        level-4: 12
+    sticky:
+      chances:
+        level-1: 3
+        level-2: 5
+        level-3: 7
+      tokens-prices:
+        level-1: 5
+        level-2: 7
+        level-3: 10
+  pickaxe:
+    explosion:
+      chances:
+        level-1: 10
+        level-2: 15
+        level-3: 17
+        level-4: 18
+        level-5: 20
+        level-6: 30
+        level-7: 40
+        level-8: 50
+        level-9: 55
+        level-10: 60
+      tokens-prices:
+        level-1: 10
+        level-2: 20
+        level-3: 30
+        level-4: 40
+        level-5: 50
+        level-6: 60
+        level-7: 70
+        level-8: 80
+        level-9: 90
+        level-10: 100
+    haste:
+      chances:
+        level-1: 10
+        level-2: 20
+        level-3: 30
+        level-4: 40
+      duration:
+        level-1: 2
+        level-2: 3
+        level-3: 4
+        level-4: 5
+      tokens-prices:
+        level-1: 5
+        level-2: 7
+        level-3: 10
+        level-4: 12
+    swift:
+      chances:
+        level-1: 10
+        level-2: 20
+        level-3: 30
+        level-4: 40
+      duration:
+        level-1: 2
+        level-2: 3
+        level-3: 4
+        level-4: 5
+      tokens-prices:
+        level-1: 5
+        level-2: 7
+        level-3: 10
+        level-4: 12
+    vision:
+      chances:
+        level-1: 40
+      tokens-prices:
+        level-1: 5

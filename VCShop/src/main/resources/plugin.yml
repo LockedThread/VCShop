@@ -1,0 +1,8 @@
+name: VCShop
+version: ${project.version}
+main: com.protein.vcshop.VCShop
+authors: [LilProteinShake]
+commands:
+  giveenchant:
+  tokenshop:
+    aliases: [vct, vcs]

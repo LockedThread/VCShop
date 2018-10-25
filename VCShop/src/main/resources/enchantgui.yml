@@ -1,0 +1,43 @@
+title: '&aCustom Enchants'
+size: 9
+background-item:
+  name: ''
+  material: 'STAINED_GLASS_PANE'
+  data: 'BLACK'
+  enchanted: true
+items:
+  0:
+    name: '&c&l[!] &cBack &c&l[!]'
+    material: 'COAL_BLOCK'
+    lore:
+    - '&7Click to view the root TokenShop GUI.'
+    commands:
+    - '#opengui tokenshop'
+  1:
+    name: '&e&l[!] &aSword Enchants &e&l[!]'
+    material: 'DIAMOND_SWORD'
+    lore:
+    - '&7Click to view the sword enchants.'
+    commands:
+    - '#opengui sword'
+  3:
+    name: '&e&l[!] &aBow Enchants &e&l[!]'
+    material: 'BOW'
+    lore:
+    - '&7Click to view the bow enchants.'
+    commands:
+    - '#opengui bow'
+  5:
+    name: '&e&l[!] &aPickaxe Enchants &e&l[!]'
+    material: 'DIAMOND_PICKAXE'
+    lore:
+    - '&7Click to view the pickaxe enchants.'
+    commands:
+    - '#opengui pickaxe'
+  7:
+    name: '&e&l[!] &aSpade Enchants &e&l[!]'
+    material: 'DIAMOND_SPADE'
+    lore:
+    - '&7Click to view the spade perks.'
+    commands:
+    - '#opengui spade'

@@ -137,37 +137,22 @@ public final class VCShop extends JavaPlugin {
     public EnchantManager getEnchantManager() {
         return enchantManager;
     }
-
     public TokenManager getTokenManager() {
         return tokenManager;
     }
-
     public WorldGuardPlugin getWorldGuardPlugin() {
         return worldGuardPlugin;
     }
-
-    public CustomConfig getDataFile() {
-        return dataFile;
-    }
-
-    public CustomConfig getRootTokenShopFile() {
-        return rootTokenShopFile;
-    }
-
     public HashMap<String, Integer> getUuidTokenMap() {
         return uuidTokenMap;
     }
 
-    public ArrayList<Gui> getGuis() {
-        return guis;
+    public ItemStack getTokenItemStack() {
+        return tokenItemStack;
     }
 
     public void openInventory(Player player, Class clazz) {
         guis.stream().filter(gui -> gui.getClass().getSimpleName().equals(clazz.getSimpleName())).forEach(gui -> gui.openInventory(player));
-    }
-
-    public CustomConfig getRootEnchantFile() {
-        return rootEnchantFile;
     }
 
     public ItemStack getGuiEnchantItemStack(String enchant, String level) {
@@ -186,13 +171,5 @@ public final class VCShop extends JavaPlugin {
         meta.setLore(meta.getLore().stream().map(s -> ChatColor.translateAlternateColorCodes('&', s.replace("{enchant}", StringUtils.capitalize(enchant)))).collect(Collectors.toList()));
         itemStack.setItemMeta(meta);
         return itemStack;
-    }
-
-    public CustomConfig getMiscFile() {
-        return miscFile;
-    }
-
-    public ItemStack getTokenItemStack() {
-        return tokenItemStack;
     }
 }

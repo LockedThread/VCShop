@@ -26,11 +26,6 @@ public class ItemStackBuilder {
         itemMeta = itemStack.getItemMeta();
     }
 
-    public ItemStackBuilder setAmount(int amount) {
-        itemStack.setAmount(amount);
-        return this;
-    }
-
     public ItemStackBuilder showEnchanted() {
         itemMeta.addEnchant(Enchantment.DURABILITY, 1, true);
         itemMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
@@ -44,21 +39,6 @@ public class ItemStackBuilder {
 
     public ItemStackBuilder setLore(List<String> lore) {
         itemMeta.setLore(lore.stream().map(loreBit -> ChatColor.translateAlternateColorCodes('&', loreBit)).collect(Collectors.toCollection(ArrayList::new)));
-        return this;
-    }
-
-    public ItemStackBuilder addEnchant(Enchantment enchanement, int level, boolean ignoreLevelRestriction) {
-        itemMeta.addEnchant(enchanement, level, ignoreLevelRestriction);
-        return this;
-    }
-
-    public ItemStackBuilder setItemFlags(ItemFlag... flags) {
-        itemMeta.addItemFlags(flags);
-        return this;
-    }
-
-    public ItemStackBuilder setUnbreakable(boolean unbreakable) {
-        itemMeta.spigot().setUnbreakable(unbreakable);
         return this;
     }
 

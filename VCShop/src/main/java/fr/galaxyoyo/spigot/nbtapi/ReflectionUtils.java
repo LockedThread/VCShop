@@ -118,14 +118,6 @@ public class ReflectionUtils {
                 parameterClasses, (Object[]) params);
     }
 
-    public static <T> T invokeBukkitMethod(String method, Object invoker) {
-        return invokeBukkitMethod(method, invoker, new Class<?>[0]);
-    }
-
-    public static Object newBukkit(String className) {
-        return newBukkit(className, new Class<?>[0]);
-    }
-
     public static Object newBukkit(String className, Class<?>[] parameterClasses, Object... params) {
         try {
             Class<?> clazz = getBukkitClass(className);
@@ -136,10 +128,6 @@ public class ReflectionUtils {
             ex.printStackTrace();
             return null;
         }
-    }
-
-    public static <T> T getBukkitField(Object owner, String fieldName) {
-        return getBukkitField(owner.getClass().getName().replace("org.bukkit.craftbukkit." + SERVER_VERSION + ".", ""), owner, fieldName);
     }
 
     public static <T> T getBukkitField(String className, Object owner, String fieldName) {
@@ -154,11 +142,6 @@ public class ReflectionUtils {
             return null;
         }
     }
-
-    public static <T> T getBukkitStaticField(String className, String fieldName) {
-        return getBukkitField(className, null, fieldName);
-    }
-
     public static Class<?> getBukkitClass(String className) {
         try {
             return Class.forName("org.bukkit.craftbukkit." + SERVER_VERSION + "." + className);

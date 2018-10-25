@@ -6,7 +6,6 @@ public enum Messages {
 
     NOT_ONLINE("&c{player} is not online!"),
     MUST_BE_POSITVE("&c&l(!) &c{num} must be positive number."),
-    CANT_EDIT("&c&l(!) &cYou can't edit terrain here."),
 
     COMMAND_GIVEENCHANT_NOT_ENCHANT("&c&l(!) &c{enchant} is not an enchant!"),
     COMMAND_GIVEENCHANT_ADDED("&a&l(!) &aAdded &e{enchant} &alevel &e{lvl} &ato your item in your hand!"),

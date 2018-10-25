@@ -54,52 +54,12 @@ public class TagCompound extends HashMap<String, Object> {
         return tag;
     }
 
-    public void setString(String key, String value) {
-        put(key, value);
-    }
-
     public void setInt(String key, int value) {
-        put(key, value);
-    }
-
-    public void setByte(String key, byte value) {
-        put(key, value);
-    }
-
-    public void setFloat(String key, float value) {
-        put(key, value);
-    }
-
-    public void setDouble(String key, double value) {
-        put(key, value);
-    }
-
-    public void setShort(String key, short value) {
-        put(key, value);
-    }
-
-    public void setLong(String key, long value) {
-        put(key, value);
-    }
-
-    public void setCompound(String key, TagCompound value) {
         put(key, value);
     }
 
     public void setList(String key, TagList value) {
         put(key, value);
-    }
-
-    public void setByteArray(String key, byte[] value) {
-        put(key, value);
-    }
-
-    public void setIntArray(String key, int[] value) {
-        put(key, value);
-    }
-
-    public void setEnd(String key) {
-        put(key, null);
     }
 
     @Override
@@ -115,78 +75,42 @@ public class TagCompound extends HashMap<String, Object> {
         return super.get(key);
     }
 
-    public String getString(String key) {
-        return (String) get(key);
-    }
-
-    public byte getByte(String key) {
-        return (byte) get(key);
-    }
-
     public int getInt(String key) {
         return (int) get(key);
     }
 
-    public double getDouble(String key) {
-        return (double) get(key);
-    }
-
-    public float getFloat(String key) {
-        return (float) get(key);
-    }
-
-    public short getShort(String key) {
-        return (short) get(key);
-    }
-
-    public long getLong(String key) {
-        return (long) get(key);
-    }
-
-    public TagCompound getCompound(String key) {
-        return (TagCompound) get(key);
-    }
-
-    public TagList getList(String key) {
+    TagList getList(String key) {
         return (TagList) get(key);
     }
 
-    public byte[] getByteArray(String key) {
-        return (byte[]) get(key);
-    }
-
-    public int[] getIntArray(String key) {
-        return (int[]) get(key);
-    }
-
-    public Object convertToNMS() {
+    Object convertToNMS() {
         Object tag = newNMS("NBTTagCompound");
-        for (Entry<String, Object> entry : entrySet()) {
-            if ( entry.getValue() == null )
-                invokeNMSMethod("set", tag, new Class<?>[]{ String.class, getNMSClass("NBTBase") }, entry.getKey(), newNMS("NBTTagEnd"));
-            else if ( entry.getValue() instanceof String )
-                invokeNMSMethod("setString", tag, new Class<?>[]{ String.class, String.class }, entry.getKey(), entry.getValue());
-            else if ( entry.getValue() instanceof Byte )
-                invokeNMSMethod("setByte", tag, new Class<?>[]{ String.class, byte.class }, entry.getKey(), entry.getValue());
-            else if ( entry.getValue() instanceof Short )
-                invokeNMSMethod("setShort", tag, new Class<?>[]{ String.class, short.class }, entry.getKey(), entry.getValue());
-            else if ( entry.getValue() instanceof Float )
-                invokeNMSMethod("setFloat", tag, new Class<?>[]{ String.class, float.class }, entry.getKey(), entry.getValue());
-            else if ( entry.getValue() instanceof Double )
-                invokeNMSMethod("setDouble", tag, new Class<?>[]{ String.class, double.class }, entry.getKey(), entry.getValue());
-            else if ( entry.getValue() instanceof Integer )
-                invokeNMSMethod("setInt", tag, new Class<?>[]{ String.class, int.class }, entry.getKey(), entry.getValue());
-            else if ( entry.getValue() instanceof Long )
-                invokeNMSMethod("setLong", tag, new Class<?>[]{ String.class, long.class }, entry.getKey(), entry.getValue());
-            else if ( entry.getValue() instanceof int[] )
-                invokeNMSMethod("setIntArray", tag, new Class<?>[]{ String.class, int[].class }, entry.getKey(), entry.getValue());
-            else if ( entry.getValue() instanceof byte[] )
-                invokeNMSMethod("setByteArray", tag, new Class<?>[]{ String.class, byte[].class }, entry.getKey(), entry.getValue());
-            else if ( entry.getValue() instanceof TagCompound )
-                invokeNMSMethod("set", tag, new Class<?>[]{ String.class, getNMSClass("NBTBase") }, entry.getKey(), ((TagCompound) entry.getValue()).convertToNMS());
-            else if ( entry.getValue() instanceof TagList )
-                invokeNMSMethod("set", tag, new Class<?>[]{ String.class, getNMSClass("NBTBase") }, entry.getKey(), ((TagList) entry.getValue()).convertToNMS());
-        }
+        forEach((key, value) -> {
+            if ( value == null )
+                invokeNMSMethod("set", tag, new Class<?>[]{ String.class, getNMSClass("NBTBase") }, key, newNMS("NBTTagEnd"));
+            else if ( value instanceof String )
+                invokeNMSMethod("setString", tag, new Class<?>[]{ String.class, String.class }, key, value);
+            else if ( value instanceof Byte )
+                invokeNMSMethod("setByte", tag, new Class<?>[]{ String.class, byte.class }, key, value);
+            else if ( value instanceof Short )
+                invokeNMSMethod("setShort", tag, new Class<?>[]{ String.class, short.class }, key, value);
+            else if ( value instanceof Float )
+                invokeNMSMethod("setFloat", tag, new Class<?>[]{ String.class, float.class }, key, value);
+            else if ( value instanceof Double )
+                invokeNMSMethod("setDouble", tag, new Class<?>[]{ String.class, double.class }, key, value);
+            else if ( value instanceof Integer )
+                invokeNMSMethod("setInt", tag, new Class<?>[]{ String.class, int.class }, key, value);
+            else if ( value instanceof Long )
+                invokeNMSMethod("setLong", tag, new Class<?>[]{ String.class, long.class }, key, value);
+            else if ( value instanceof int[] )
+                invokeNMSMethod("setIntArray", tag, new Class<?>[]{ String.class, int[].class }, key, value);
+            else if ( value instanceof byte[] )
+                invokeNMSMethod("setByteArray", tag, new Class<?>[]{ String.class, byte[].class }, key, value);
+            else if ( value instanceof TagCompound )
+                invokeNMSMethod("set", tag, new Class<?>[]{ String.class, getNMSClass("NBTBase") }, key, ((TagCompound) value).convertToNMS());
+            else if ( value instanceof TagList )
+                invokeNMSMethod("set", tag, new Class<?>[]{ String.class, getNMSClass("NBTBase") }, key, ((TagList) value).convertToNMS());
+        });
         return tag;
     }
 }
